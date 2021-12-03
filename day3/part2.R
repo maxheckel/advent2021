@@ -1,12 +1,12 @@
 library(tidyverse)
 
 #sample
-data <- read.fwf('sample.txt', widths = c(1, 1, 1, 1, 1))
-flatData <- read_delim("sample.txt", "\n", col_names=FALSE)
+#data <- read.fwf('sample.txt', widths = c(1, 1, 1, 1, 1))
+#flatData <- read_delim("sample.txt", "\n", col_names=FALSE)
 
 # input
-#data <- read.fwf('input.txt', widths = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
-#flatData <- read_delim("input.txt", "\n", col_names=FALSE)
+data <- read.fwf('input.txt', widths = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+flatData <- read_delim("input.txt", "\n", col_names=FALSE)
 bits = c()
 
 for (i in 1:ncol(data)){
@@ -26,9 +26,9 @@ for (i in 1:ncol(data)){
 }
 oxygenDec = strtoi(oxygen, base = 2)
 
-data <- read.fwf('sample.txt', widths = c(1, 1, 1, 1, 1))
+#data <- read.fwf('sample.txt', widths = c(1, 1, 1, 1, 1))
 
-#data <- read.fwf('input.txt', widths = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
+data <- read.fwf('input.txt', widths = c(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1))
 bits = c()
 for (i in 1:ncol(data)){
   newBit = 1
@@ -46,4 +46,4 @@ for (i in 1:ncol(data)){
   }
 }
 co2Dec = strtoi(co2, base = 2)
-print(co2Dec)
+print(co2Dec*oxygenDec)
