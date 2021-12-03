@@ -1,7 +1,6 @@
 library(tidyverse)
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 data <- read_delim('input.txt', delim = ' ', col_names = c('direction', 'amount'))
-print(data)
 horizontal = 0
 depth = 0
 for (i in 0:nrow(data)){
